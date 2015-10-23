@@ -108,6 +108,15 @@ class Client implements ClientInterface
         return (string) $this->baseUrl;
     }
 
+    public function setBaseUrl($baseUrl)
+    {
+        if ($baseUrl instanceof Url) {
+            $this->baseUrl = $baseUrl;
+        } else {
+            $this->baseUrl = Url::fromString($config['base_url']);
+        }
+    }
+
     public function createRequest($method, $url = null, array $options = [])
     {
         $options = $this->mergeDefaults($options);
