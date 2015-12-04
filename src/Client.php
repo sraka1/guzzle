@@ -113,7 +113,7 @@ class Client implements ClientInterface
         if ($baseUrl instanceof Url) {
             $this->baseUrl = $baseUrl;
         } else {
-            $this->baseUrl = Url::fromString($config['base_url']);
+            $this->baseUrl = Url::fromString($baseUrl);
         }
     }
 
